@@ -33,7 +33,7 @@ public class ListViewPage extends AppCompatActivity {
         String message = intent.getStringExtra(EXTRA_MESSAGE);
         getSupportActionBar().setTitle(message);
 
-        root = (ListView) findViewById(R.id.listView);
+        root = (ListView) findViewById(R.id.listView); // FIXME RecyclerView > ListView
 
         String [] list = new String[15];
         for(int i=0;i<list.length;i++){

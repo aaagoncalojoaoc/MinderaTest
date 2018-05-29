@@ -18,6 +18,7 @@
             android:background="@color/barBackgroundColor"
             app:popupTheme="@style/AppTheme.PopupOverlay">
 
+            <!-- FIXME text sizes should not be in DP -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"

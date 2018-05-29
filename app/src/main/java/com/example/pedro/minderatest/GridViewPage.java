@@ -31,7 +31,7 @@ public class GridViewPage extends AppCompatActivity {
         String message = intent.getStringExtra(EXTRA_MESSAGE_2);
         getSupportActionBar().setTitle(message);
 
-        root = (GridView) findViewById(R.id.gridView);
+        root = (GridView) findViewById(R.id.gridView); // FIXME GridView is an old component and very inefficient, you can research other ways of doing this
 
         String [] list = new String[15];
         for(int i=0;i<list.length;i++){

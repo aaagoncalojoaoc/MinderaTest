@@ -12,4 +12,6 @@
     android:horizontalSpacing="5dp"
     android:stretchMode="spacingWidthUniform">
 
+    <!-- FIXME generally, sizes/spacing/dimensions in Android follow Google's material design rules (multiples of 8)-->
+
 </GridView>

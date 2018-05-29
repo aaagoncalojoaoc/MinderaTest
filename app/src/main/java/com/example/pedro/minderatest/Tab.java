@@ -59,6 +59,7 @@ public class Tab extends Fragment {
         if(mParam1 == 1){
             LinearLayout root = rootView.findViewById(R.id.scrollable);
 
+            // FIXME more explicit variable naming
             View[] v = new View[18];
 
             for(int i=0;i<v.length;i++){
@@ -67,11 +68,12 @@ public class Tab extends Fragment {
                 v[i] = makeBox("Day "+j);
             }
 
+            // FIXME this could have been done dynamically, with a RecyclerView
             View[] b = {makeBox(null),makeBox(null),makeBox(null),makeBox(null),makeBox(null)};
             View[] n = {makeBox(null),makeBox(null),makeBox(null),makeBox(null),makeBox(null)};
 
 
-            root.addView(makeScrollableContent("Open Day '18",v));
+            root.addView(makeScrollableContent("Open Day '18",v)); // FIXME hardcoded strings, why not use resources?
             root.addView(makeScrollableContent("Graduate Program",b));
             root.addView(makeScrollableContent("Meet Mindera Code & Culture ",n));
         }
@@ -81,9 +83,10 @@ public class Tab extends Fragment {
 
     private LinearLayout makeBox(String text){
 
+        // FIXME this could be a custom view
         LinearLayout l = new LinearLayout(getContext());
         LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams((int)getResources().getDimension(R.dimen.scrollable_content_box_width), ViewGroup.LayoutParams.MATCH_PARENT);
-        lp.setMargins(20,20,20,20);
+        lp.setMargins(20,20,20,20); // FIXME hardcoded dimensions, should be in dimens.xml
         l.setLayoutParams(lp);
         l.setPadding(0,0,0,20);
         l.setBackgroundColor(getResources().getColor(R.color.BackgroundColor));
@@ -102,6 +105,7 @@ public class Tab extends Fragment {
                 public void onClick(View v) {
                     Intent intent = new Intent(getContext(), ListViewPage.class);
                     String name;
+                    // FIXME hardcoded string concatenation, should use resources with placeholders
                     name = ((TextView)((LinearLayout)v.getParent().getParent().getParent().getParent()).getChildAt(0)).getText().toString();
                     name += "_";
                     name += ((TextView)v).getText().toString();
